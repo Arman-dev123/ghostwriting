@@ -13,6 +13,7 @@ import FAQ from './pages/FAQ';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import { Page } from './types';
+import './index.css';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
