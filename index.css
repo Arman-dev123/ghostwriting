@@ -1,58 +1,67 @@
 @import "tailwindcss";
 
-/* MANUALLY FORCE ALL BACKGROUNDS AND TEXT CONTRAST */
+/* 1. GLOBAL THEME FORCING */
 html.dark body, 
 html.dark main,
 html.dark section {
-  background-color: #000000 !important; /* Pure Black background */
-  color: #f5f5f5 !important;
+    background-color: #000000 !important;
+    color: #f5f5f5 !important;
 }
 
-/* 1. UPDATE BOXES: Pure black with gold borders */
+/* 2. NAVBAR SCROLL SAFETY - Prevents light mode on scroll */
+html.dark nav {
+    /* Targets the navbar specifically when it has a bg-white class applied by React */
+    &.bg-white\/95 {
+        background-color: rgba(0, 0, 0, 0.95) !important;
+        border-color: rgba(212, 175, 55, 0.2) !important;
+        box-shadow: 0 4px 20px rgba(212, 175, 55, 0.15) !important;
+    }
+}
+
+/* 3. LUXURY BOXES & CARDS */
 html.dark .glass-card,
 html.dark .bg-white,
 html.dark .bg-neutral-50,
-html.dark .bg-\[\#F9F6EE\],
 html.dark div[class*="rounded-"] {
-  background-color: #000000 !important; /* Force black boxes */
-  border: 1px solid rgba(212, 175, 55, 0.4) !important; /* Gold outline */
-  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.05) !important; /* Subtle gold glow */
+    background-color: #000000 !important;
+    border: 1px solid rgba(212, 175, 55, 0.4) !important;
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.05) !important;
 }
 
-/* 2. REFINING HEADINGS & CONTRAST */
-html.dark h1, 
-html.dark h2, 
-html.dark h3, 
-html.dark h4,
-html.dark .text-neutral-900 {
-  color: #ffffff !important;
-}
-
-html.dark p,
-html.dark .text-neutral-600 {
-  color: #d1d1d1 !important; /* Lighter grey for readability on black */
-}
-
-/* 3. FORM INPUTS: Black with Gold Outline */
+/* 4. FORM INPUTS & GOLD ICONS */
 html.dark input, 
 html.dark select, 
 html.dark textarea {
-  background-color: #000000 !important;
-  color: #ffffff !important;
-  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
 }
 
+/* Force Native Browser Icons (Calendar/Clock) to Gold */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(45%) sepia(85%) saturate(550%) hue-rotate(10deg);
+    cursor: pointer;
+}
+
+/* Input Focus Glow */
 html.dark input:focus, 
 html.dark textarea:focus {
-  border-color: #D4AF37 !important; /* Solid gold on focus */
-  outline: none;
+    border-color: #D4AF37 !important;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3) !important;
+    outline: none;
 }
 
-/* 4. RE-ENFORCE GOLD TEXT */
-html.dark .gold-text-gradient,
-html.dark .text-\[\#D4AF37\] {
-  color: #D4AF37 !important;
-  background: linear-gradient(to right, #D4AF37, #FBF5B7, #D4AF37) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
+/* 5. TEXT CONTRAST RESCUE */
+html.dark h1, html.dark h2, html.dark h3, html.dark .text-neutral-900 {
+    color: #ffffff !important;
+}
+
+html.dark p, html.dark .text-neutral-600 {
+    color: #d1d1d1 !important;
+}
+
+/* 6. NATIVE BROWSER DARK SCHEME */
+html.dark {
+    color-scheme: dark;
 }
