@@ -52,7 +52,6 @@ const Quotation: React.FC = () => {
 
   return (
     <div className="pt-32 pb-24 min-h-screen bg-white">
-      {/* Updated SEO Component with your specific metadata */}
       <SEO 
         title="Gold Leaf Ghostwriting | Services"
         description="Explore our professional ghostwriting services, Amazon book publishing, and author website creation. We deliver excellence in every word."
@@ -61,17 +60,39 @@ const Quotation: React.FC = () => {
       />
       
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
+        {/* Left Side: Consultation Details */}
         <div className="sticky top-40">
-          <h1 className="text-5xl font-serif font-bold mb-6">Start Your <span className="gold-text-gradient">Legacy</span></h1>
+          <h1 className="text-5xl font-serif font-bold mb-6">
+            Schedule a <span className="gold-text-gradient">Consultation</span>
+          </h1>
           <p className="text-lg text-neutral-600 mb-8 leading-relaxed">
-            Fill out the form to receive a personalized quote from Gold Leaf Ghostwriting. We treat every project with the highest level of confidentiality and professional rigor.
+            Begin your literary journey with a private consultation. We respect your time and privacy. 
+            All discussions are strictly confidential.
           </p>
-          <div className="p-6 bg-[#F9F6EE] rounded-2xl border-l-4 border-[#D4AF37]">
-            <h4 className="font-bold text-neutral-800 mb-2">Our Privacy Promise</h4>
-            <p className="text-sm text-neutral-600">All submissions are protected by our strict non-disclosure policy. Your ideas remain yours throughout the entire Gold Leaf Ghostwriting process.</p>
+
+          <div className="space-y-8">
+            <div>
+              <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#D4AF37] mb-2">Direct Hotline</h4>
+              <p className="text-3xl font-serif font-bold text-neutral-800">+1 (800) GOLD-LEAF</p>
+            </div>
+
+            <div className="p-8 bg-[#F9F6EE] rounded-2xl border-l-4 border-[#D4AF37]">
+              <h4 className="font-bold text-neutral-800 mb-4 uppercase tracking-wider text-sm">Hours of Service</h4>
+              <div className="space-y-2 text-neutral-600">
+                <div className="flex justify-between border-b border-neutral-200 pb-2">
+                  <span>Mon - Fri</span>
+                  <span className="font-semibold text-neutral-800">9:00 AM - 9:00 PM EST</span>
+                </div>
+                <div className="flex justify-between pt-2">
+                  <span>Weekends</span>
+                  <span className="italic">By Appointment Only</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
+        {/* Right Side: Form */}
         <div className="glass-card p-10 rounded-3xl shadow-2xl">
           {status === 'success' ? (
             <div className="text-center py-10">
