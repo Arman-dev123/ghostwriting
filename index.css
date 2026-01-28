@@ -1,5 +1,58 @@
-/* src/index.css */
-body {
-    margin: 0;
-    padding: 0;
+@import "tailwindcss";
+
+/* MANUALLY FORCE ALL BACKGROUNDS AND TEXT CONTRAST */
+html.dark body, 
+html.dark main,
+html.dark section {
+  background-color: #000000 !important; /* Pure Black background */
+  color: #f5f5f5 !important;
+}
+
+/* 1. UPDATE BOXES: Pure black with gold borders */
+html.dark .glass-card,
+html.dark .bg-white,
+html.dark .bg-neutral-50,
+html.dark .bg-\[\#F9F6EE\],
+html.dark div[class*="rounded-"] {
+  background-color: #000000 !important; /* Force black boxes */
+  border: 1px solid rgba(212, 175, 55, 0.4) !important; /* Gold outline */
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.05) !important; /* Subtle gold glow */
+}
+
+/* 2. REFINING HEADINGS & CONTRAST */
+html.dark h1, 
+html.dark h2, 
+html.dark h3, 
+html.dark h4,
+html.dark .text-neutral-900 {
+  color: #ffffff !important;
+}
+
+html.dark p,
+html.dark .text-neutral-600 {
+  color: #d1d1d1 !important; /* Lighter grey for readability on black */
+}
+
+/* 3. FORM INPUTS: Black with Gold Outline */
+html.dark input, 
+html.dark select, 
+html.dark textarea {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+}
+
+html.dark input:focus, 
+html.dark textarea:focus {
+  border-color: #D4AF37 !important; /* Solid gold on focus */
+  outline: none;
+}
+
+/* 4. RE-ENFORCE GOLD TEXT */
+html.dark .gold-text-gradient,
+html.dark .text-\[\#D4AF37\] {
+  color: #D4AF37 !important;
+  background: linear-gradient(to right, #D4AF37, #FBF5B7, #D4AF37) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
 }
