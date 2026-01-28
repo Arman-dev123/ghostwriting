@@ -38,7 +38,7 @@ const Quotation: React.FC = () => {
           phone: formData.phoneNumber,
           service: formData.serviceType,
           details: formData.projectDetails,
-          preferred_date: formData.date || null, // Ensures valid date format for Postgres
+          preferred_date: formData.date || null,
           preferred_time: formData.time || null
         }]);
 
@@ -52,9 +52,12 @@ const Quotation: React.FC = () => {
 
   return (
     <div className="pt-32 pb-24 min-h-screen bg-white">
+      {/* Updated SEO Component with your specific metadata */}
       <SEO 
-        title="Get a Quote | Gold Leaf Ghostwriting" 
-        description="Start your literary journey with Gold Leaf Ghostwriting. Fill out our consultation form to receive a bespoke proposal for your book project."
+        title="Gold Leaf Ghostwriting | Services"
+        description="Explore our professional ghostwriting services, Amazon book publishing, and author website creation. We deliver excellence in every word."
+        url="https://goldleaf-ghostwriting-one.vercel.app/services"
+        image="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=80"
       />
       
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
@@ -169,9 +172,8 @@ const Quotation: React.FC = () => {
                   <option value="ghostwriting">General Ghostwriting</option>
                   <option value="book">Book Ghostwriting</option>
                   <option value="amazon">Amazon KDP Services</option>
-                  <option value="memoir">Biography</option>
-                  <option value="memoir">Author Website</option>
-               
+                  <option value="biography">Biography/Memoir</option>
+                  <option value="website">Author Website</option>
                 </select>
               </div>
 
