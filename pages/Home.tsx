@@ -109,7 +109,7 @@ const Home: React.FC = () => {
     <div className="flex flex-col">
       {/* 1. SEO METADATA - Targeted Keywords for Search Engines */}
       <SEO 
-        title="Professional Ghostwriting & Amazon Book Publishing Services | Gold Leaf" 
+        title="Gold Leaf Ghostwriting | Professional Ghostwriting & Publishing" 
         description="Elite ghostwriting, professional book publishing, and Amazon KDP optimization. We build author websites and craft legacies for visionaries with 100% confidentiality."
         url="https://goldleaf-ghostwriting-one.vercel.app/"
         image="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=80"
